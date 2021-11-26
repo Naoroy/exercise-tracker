@@ -3,7 +3,6 @@ const app     = express()
 const PORT    = 3030
 const { createUser, getUsers }    = require('./src/user.controller')
 
-console.log(createUser)
 app.use(express.json())
 
 app.get('/', function(req, res) {

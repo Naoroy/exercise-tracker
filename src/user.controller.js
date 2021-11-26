@@ -1,7 +1,7 @@
 const userList = []
 
 const User = function(options) {
-  this._id = options._id
+  this._id = userList.length
   this.username = options.username
 }
 
@@ -9,11 +9,15 @@ userList.push(new User({ username: 'nono', _id: 1 }))
 userList.push(new User({ username: 'nana', _id: 2 }))
 
 function createUser(req, res) {
-  res.send('wesh')
+  const username = req.body.username
+  console.log(username)
+  let newuser = new User({ username })
+  userList.push(newuser)
+  res.send(newuser)
 }
+
 function getUsers(req, res) {
-  console.log(userList)
-  res.send('wesh')
+  res.send(userList)
 }
 
 
