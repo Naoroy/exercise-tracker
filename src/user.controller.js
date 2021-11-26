@@ -10,7 +10,6 @@ userList.push(new User({ username: 'nana', _id: 2 }))
 
 function createUser(req, res) {
   const username = req.body.username
-  console.log(username)
   let newuser = new User({ username })
   userList.push(newuser)
   res.send(newuser)
