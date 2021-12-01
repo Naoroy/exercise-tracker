@@ -42,6 +42,7 @@ module.exports = {
     const user = users.find(req.params._id).info
     const log = user.log
     const { from, to, limit } = req.query
+    let filteredLog
 
     if (from && to) {
       filteredLog = log.filter(({ date }) => {
